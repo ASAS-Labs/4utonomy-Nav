@@ -1,0 +1,17 @@
+build/
+install/
+log/
+.ros/
+*.bag
+*.db3
+*.pcd
+*.ply
+*.stl
+*.obj
+*.onnx
+*.pt
+*.zip
+*.tar
+*.gz
+.DS_Store
+.env
