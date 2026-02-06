@@ -1,17 +1,26 @@
+# colcon
 build/
 install/
 log/
-.ros/
+
+# ros bags, maps, large data
+bags/
 *.bag
 *.db3
+*.mcap
 *.pcd
 *.ply
-*.stl
-*.obj
-*.onnx
-*.pt
-*.zip
-*.tar
-*.gz
+*.osm
+*.yaml.bak
+
+# editor and OS
 .DS_Store
-.env
+.vscode/
+.idea/
+*.swp
+
+# credentials
+.git-credentials
+*.pem
+*.key
+
