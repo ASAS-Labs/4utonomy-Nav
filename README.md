@@ -65,8 +65,8 @@ mkdir -p ~/autoware_map
 
 ```bash
 cd ~/autoware_ws
-chmod +x docker/run.sh
-./docker/run.sh
+chmod +x docker/run_autoware.sh
+./docker/run_autoware.sh
 ```
 
 This will open a bash shell inside the container with these mounts:
