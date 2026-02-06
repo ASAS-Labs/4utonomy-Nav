@@ -47,7 +47,7 @@ Clone this repo:
 git clone https://github.com/ASAS-Labs/4utonomy-Nav.git ~/autoware_ws
 ```
 
-##Get the map (download from Google Drive)
+## Get the map (download from Google Drive)
 
 Download the map archive from Google Drive:
 
@@ -59,9 +59,9 @@ mkdir -p ~/autoware_map
 # unzip the downloaded file into ~/autoware_map
 ```
 
-##Start the Autoware Docker container
+## Start the Autoware Docker container
 
-###From your host terminal:
+### From your host terminal:
 
 ```bash
 cd ~/autoware_ws
@@ -75,9 +75,9 @@ This will open a bash shell inside the container with these mounts:
 
 ~/autoware_map -> /home/autoware/autoware_map
 
-##Build the workspace inside the container
+## Build the workspace inside the container
 
-###Inside the container:
+### Inside the container:
 ```bash
 cd /home/autoware/autoware_ws
 colcon build --symlink-install
@@ -89,9 +89,9 @@ If you open a new shell later, source again:
 source /home/autoware/autoware_ws/install/setup.bash
 ```
 
-##Run Autoware with the map
+## Run Autoware with the map
 
-###Inside the container (after sourcing the workspace):
+### Inside the container (after sourcing the workspace):
 
 ```
 ros2 launch autoware_launch planning_simulator.launch.xml \
