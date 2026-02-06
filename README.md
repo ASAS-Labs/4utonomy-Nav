@@ -1,47 +1,102 @@
-### 4utonomy Nav
-## This repo contains:
+# 4utonomy Nav
 
-docker/ Dockerfile and helper scripts to run Autoware in Docker
-src/ Autoware workspace source packages and custom changes
+This repo contains:
 
-#Large data like maps and bags are not stored in this repo.
+- `docker/` Dockerfile and helper scripts to run Autoware in Docker
+- `src/` Autoware workspace source packages and custom changes
 
-##Folder layout on your machine
-#Create these folders:
+Large data like maps and bags are not stored in this repo.
 
-~/autoware_ws (this repo)
-~/autoware_map (downloaded separately)
-#After setup it should look like:
+---
 
-~/autoware_ws docker/ src/ .gitignore README.md
+## Folder layout on your machine
 
-~/autoware_map (map files here)
+Create these folders:
 
-##Prerequisites
-Ubuntu 22.04
-Docker installed
-NVIDIA GPU + NVIDIA Container Toolkit (for --runtime=nvidia)
-Enough disk space for Autoware build and maps
-##Get the workspace
-#Clone this repo:
+- `~/autoware_ws` (this repo)
+- `~/autoware_map` (downloaded separately)
 
-git clone https://github.com/ASAS-Labs/4utonomy-Nav ~/autoware_ws
+After setup it should look like:
+
+~/autoware_ws/
+docker/
+src/
+.gitignore
+README.md
+
+~/autoware_map/
+(map files here)
+
+
+---
+
+## Prerequisites
+
+- Ubuntu 22.04
+- Docker installed
+- NVIDIA GPU + NVIDIA Container Toolkit (for `--runtime=nvidia`)
+- Enough disk space for Autoware build and maps
+
+---
+
+## Get the workspace
+
+Clone this repo:
+
+```bash
+git clone https://github.com/ASAS-Labs/4utonomy-Nav.git ~/autoware_ws
+```
 
 ##Get the map (download from Google Drive)
+
 Download the map archive from Google Drive:
 
-Link:
+Link: 
+
 Unzip it into:
+```bash
+mkdir -p ~/autoware_map
+# unzip the downloaded file into ~/autoware_map
+```
 
-~/autoware_map
+##Start the Autoware Docker container
 
-##Start the autoware docker installation
-Run it on terminal:
+###From your host terminal:
 
-cd autoware_ws/Docker ./docker/run.sh
+```bash
+cd ~/autoware_ws
+chmod +x docker/run.sh
+./docker/run.sh
+```
+
+This will open a bash shell inside the container with these mounts:
+
+~/autoware_ws -> /home/autoware/autoware_ws
+
+~/autoware_map -> /home/autoware/autoware_map
 
 ##Build the workspace inside the container
-source /home/autoware/autoware_ws/install/setup.bash cd /home/autoware/autoware_ws colcon build --symlink-install source install/setup.bash
+
+###Inside the container:
+```bash
+cd /home/autoware/autoware_ws
+colcon build --symlink-install
+source install/setup.bash
+```
+
+If you open a new shell later, source again:
+```
+source /home/autoware/autoware_ws/install/setup.bash
+```
 
 ##Run Autoware with the map
-ros2 launch autoware_launch planning_simulator.launch.xml map_path:=/home/autoware/autoware_map/uni_map2 vehicle_model:=sample_vehicle sensor_model:=sample_sensor_kit
+
+###Inside the container (after sourcing the workspace):
+
+```
+ros2 launch autoware_launch planning_simulator.launch.xml \
+  map_path:=/home/autoware/autoware_map/uni_map2 \
+  vehicle_model:=sample_vehicle \
+  sensor_model:=sample_sensor_kit
+```
+
