@@ -1,5 +1,8 @@
 # 4utonomy Nav
 
+> **4utonomy by ASAS Labs** - Production autonomous vehicle navigation system (2026)  
+> This is a current production implementation by ASAS Labs, distinct from the historical "buggy" proposal.
+
 This repo contains:
 
 - `docker/` Dockerfile and helper scripts to run Autoware in Docker

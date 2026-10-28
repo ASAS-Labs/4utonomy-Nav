@@ -1,5 +1,8 @@
 # Operational Risk Assessment System
 
+> **4utonomy by ASAS Labs** - Production autonomous vehicle safety system (2026)  
+> This is a current production implementation, distinct from the historical "buggy" proposal.
+
 A comprehensive real-time risk assessment system for autonomous vehicles, monitoring weather, sensor health, and operational domain compliance.
 
 ## Overview
@@ -288,8 +291,16 @@ risk_assessment_launch = IncludeLaunchDescription(
 
 MIT License - See LICENSE file for details
 
+## Project Information
+
+**4utonomy by ASAS Labs** (2026)  
+Production autonomous vehicle navigation and safety systems
+
+This is a current production implementation developed by ASAS Labs. This project is independent and distinct from any historical academic proposals, research projects, or NYU-affiliated work that may have used similar naming.
+
 ## Contact
 
-4utonomy Development Team
+4utonomy Development Team - ASAS Labs
+- Repository: https://github.com/ASAS-Labs/4utonomy-Nav
 - Issues: https://github.com/ASAS-Labs/4utonomy-Nav/issues
 - Email: dev@4utonomy.com

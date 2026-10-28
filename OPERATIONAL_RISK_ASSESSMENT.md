@@ -1,5 +1,7 @@
 # 4utonomy Operational Risk Assessment System
 
+> **Note**: This is the current 4utonomy production system developed by ASAS Labs (2026). This is a distinct, separate project from the historical "buggy" 4utonomy proposal. This implementation represents a complete, production-ready autonomous vehicle risk assessment platform.
+
 ## Executive Summary
 
 The Operational Risk Assessment (ORA) system provides real-time, continuous monitoring and evaluation of risk factors affecting autonomous vehicle operations. It addresses a critical gap in autonomous vehicle safety by providing:
@@ -497,6 +499,13 @@ MIT License - See LICENSE file
 - **Email**: dev@4utonomy.com
 
 ---
+
+## Project Identity
+
+**4utonomy by ASAS Labs** (2026)  
+*Production autonomous vehicle navigation and safety systems*
+
+This is the current 4utonomy production implementation - a complete autonomous vehicle platform with real-time risk assessment, weather integration, and operational safety monitoring. This project is independently developed by ASAS Labs and is distinct from any historical academic proposals or research projects that may have used similar naming.
 
 **4utonomy Development Team**  
 *Making Autonomous Vehicles Weather-Aware and Risk-Conscious*
