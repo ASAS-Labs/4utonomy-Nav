@@ -4,8 +4,13 @@ This repo contains:
 
 - `docker/` Dockerfile and helper scripts to run Autoware in Docker
 - `src/` Autoware workspace source packages and custom changes
+- `src/operational_risk_assessment/` Real-time operational risk assessment system
 
 Large data like maps and bags are not stored in this repo.
+
+## 🆕 New: Operational Risk Assessment System
+
+A comprehensive real-time risk monitoring system for autonomous operations that monitors weather conditions, sensor health, and operational domain compliance. See [OPERATIONAL_RISK_ASSESSMENT.md](OPERATIONAL_RISK_ASSESSMENT.md) for complete documentation.
 
 ---
 
@@ -93,10 +98,27 @@ source /home/autoware/autoware_ws/install/setup.bash
 
 ### Inside the container (after sourcing the workspace):
 
-```
+```bash
 ros2 launch autoware_launch planning_simulator.launch.xml \
   map_path:=/home/autoware/autoware_map/uni_map2 \
   vehicle_model:=sample_vehicle \
   sensor_model:=sample_sensor_kit
 ```
+
+## Operational Risk Assessment (Optional)
+
+Launch the risk assessment system in a separate terminal:
+
+```bash
+# Inside the container
+ros2 launch operational_risk_assessment risk_assessment.launch.py
+```
+
+Monitor the risk assessment:
+
+```bash
+ros2 topic echo /risk_assessment/overall
+```
+
+For complete documentation, see [OPERATIONAL_RISK_ASSESSMENT.md](OPERATIONAL_RISK_ASSESSMENT.md).
 

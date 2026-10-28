@@ -1,0 +1,25 @@
+# Risk Factor Weights Configuration
+# Higher weights = greater impact on overall risk score
+
+risk_aggregator:
+  ros__parameters:
+    # Weather Risks
+    weather/precipitation: 1.5
+    weather/visibility: 2.0      # Highest weight for visibility
+    weather/wind: 1.0
+    
+    # Sensor Health Risks
+    sensor/lidar_health: 2.0
+    sensor/lidar_stale: 2.5
+    sensor/lidar_no_data: 3.0    # Critical: no LiDAR data
+    sensor/localization: 2.5
+    sensor/localization_stale: 2.5
+    sensor/localization_no_data: 3.0  # Critical: no localization
+    
+    # Operational Domain Risks
+    operational/speed_appropriateness: 1.5
+    operational/lighting: 1.0
+    
+    # Thresholds
+    update_rate: 5.0
+    safe_threshold: 0.4  # Above this score = unsafe to operate autonomously
